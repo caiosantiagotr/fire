@@ -13,10 +13,7 @@ export function FormUsers() {
   const [users, setUsers] = useState([]);
   const [showForm, setShowForm] = useState(true);
   const [isEditing, setIsEditing] = useState("");
-  const [Ederenço, setEderenço] = useState("")
-const[Pais, setPais] = useState("")
-const[ Telefone, setTelefone] = useState("")
-const [ Estado Civil, setEstadoCivil] = useState("")
+  
 
   useEffect(() => {
 
@@ -32,10 +29,7 @@ const [ Estado Civil, setEstadoCivil] = useState("")
           nome: doc.data().nome,
           idade: doc.data().idade,
           cargo: doc.data().cargo
-         endereço: doc.data().endereço,
-         país: doc.data().pais
-         relefone: doc.data().telefone,
-         estado civil: doc.data(). estado, civil
+         
          
         })
       })
@@ -57,20 +51,14 @@ const [ Estado Civil, setEstadoCivil] = useState("")
       nome: nome,
       idade: idade,
       cargo: cargo,
-      Ederenço: ederenço,
-     Pais: país,
-     Telefone: telefone,
-Estado Civil: estado civil,
+      
     })
     .then(() => {
       console.log("CADASTRADO COM SUCESSO")
       setNome("")
       setIdade("")
       setCargo("")
-      setEderenço("")
-      setPais("")
-      setTelefone("")
-    setEstadoCivil("")
+      
     })
     .catch((err) => {
       console.log(err)
@@ -88,10 +76,7 @@ Estado Civil: estado civil,
     setIdade(data.idade)
     setCargo(data.cargo)
     setIsEditing(data.id);
-    setEderenço(data.Ederenço)
-   setPais(data.Pais)
-   setTelefone(data.Telefone)
-  setEstadoCivil(data.EstadoCivil)
+    
   }
 
   async function handleEditUser(){
@@ -100,20 +85,14 @@ Estado Civil: estado civil,
       nome: nome,
       idade: idade,
       cargo: cargo,
-      ederenço: ederenço,
-      pais: pais,
-      telefone: telefone,
-    estado civil: estado civil,
+      
     })
 
     setNome("")
     setCargo("")
     setIdade("")
     setIsEditing("");
-    setEderenço("")
-    setPais("")
-    setTelefone("")
-    setEstadoCivil("")
+    
   }
 
   async function handleLogout(){
