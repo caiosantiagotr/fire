@@ -14,6 +14,9 @@ export function FormUsers() {
   const [showForm, setShowForm] = useState(true);
   const [isEditing, setIsEditing] = useState("");
   const [Ederenço, setEderenço] = useState("")
+const[Pais, setPais] = useState("")
+const[ Telefone, setTelefone] = useState("")
+const [ Estado Civil, setEstadoCivil] = useState("")
 
   useEffect(() => {
 
@@ -29,6 +32,10 @@ export function FormUsers() {
           nome: doc.data().nome,
           idade: doc.data().idade,
           cargo: doc.data().cargo
+         endereço: doc.data().endereço,
+         país: doc.data().pais
+         relefone: doc.data().telefone,
+         estado civil: doc.data(). estado, civil
          
         })
       })
@@ -50,13 +57,20 @@ export function FormUsers() {
       nome: nome,
       idade: idade,
       cargo: cargo,
-      Ederenço: Ederenço,
+      Ederenço: ederenço,
+     Pais: país,
+     Telefone: telefone,
+Estado Civil: estado civil,
     })
     .then(() => {
       console.log("CADASTRADO COM SUCESSO")
       setNome("")
       setIdade("")
       setCargo("")
+      setEderenço("")
+      setPais("")
+      setTelefone("")
+    setEstadoCivil("")
     })
     .catch((err) => {
       console.log(err)
@@ -75,6 +89,9 @@ export function FormUsers() {
     setCargo(data.cargo)
     setIsEditing(data.id);
     setEderenço(data.Ederenço)
+   setPais(data.Pais)
+   setTelefone(data.Telefone)
+  setEstadoCivil(data.EstadoCivil)
   }
 
   async function handleEditUser(){
@@ -83,7 +100,10 @@ export function FormUsers() {
       nome: nome,
       idade: idade,
       cargo: cargo,
-      Ederenço: Ederenço,
+      ederenço: ederenço,
+      pais: pais,
+      telefone: telefone,
+    estado civil: estado civil,
     })
 
     setNome("")
@@ -91,6 +111,9 @@ export function FormUsers() {
     setIdade("")
     setIsEditing("");
     setEderenço("")
+    setPais("")
+    setTelefone("")
+    setEstadoCivil("")
   }
 
   async function handleLogout(){
